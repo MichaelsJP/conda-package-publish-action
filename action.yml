@@ -1,6 +1,6 @@
-name: 'Publish Conda package to Anaconda.org'
+name: 'Build and publish Conda packages to Anaconda.org'
 description: 'Build and Publish conda package to Anaconda'
-author: 'Andrew Prokhorenkov, modified by Maxime Borry'
+author: 'Andrew Prokhorenkov, modified by Julian Psotta'
 branding:
   icon: 'package'  
   color: 'purple'
@@ -10,6 +10,12 @@ inputs:
     default: '.'
   AnacondaToken:
     description: 'Anaconda access Token'
+  platforms:
+    description: 'Platforms to publish [all or osx-64 osx-arm64 linux-32 linux-ppc64 linux-ppc64le linux-s390x linux-armv6l linux-armv7l linux-aarch64 win-32 win-64]. linux-64 is default.'
+    default: 'osx-64 osx-arm64 linux-32 linux-ppc64 linux-ppc64le linux-s390x linux-armv6l linux-armv7l linux-aarch64 win-32 win-64'
+  override:
+    description: 'Override existing packages [true/false]'
+    default: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
