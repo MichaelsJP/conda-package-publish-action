@@ -19,9 +19,15 @@ jobs:
     - name: publish-to-conda
       uses: maxibor/conda-package-publish-action@v1.1
       with:
-        subDir: 'conda'
+        subDir: '.conda'
         AnacondaToken: ${{ secrets.ANACONDA_TOKEN }}
+        platforms: 'all'
+        override: true
 ```
+- `subDir` defines the directory where the conda configs live.
+- `AnacondaToken` definese the conda API token for password less access.
+- `platforms` define the desired target platforms. All will build... well, all. Possible choices: 'osx-64 osx-arm64 linux-32 linux-ppc64 linux-ppc64le linux-s390x linux-armv6l linux-armv7l linux-aarch64 win-32 win-64'
+- `override` is set to false by default. Set to `true` to override existing packages in your conda repository.
 
 ### Example project structure
 
