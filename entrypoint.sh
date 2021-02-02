@@ -25,31 +25,31 @@ build_package(){
     conda convert -p osx-64 linux-64/*.tar.bz2
     fi
     if [[ $INPUT_PLATFORMS == *"all"* || $INPUT_PLATFORMS == *"osx-arm64"* ]]; then
-    conda convert -p osx-64 linux-64/*.tar.bz2
+    conda convert -p osx-arm64 linux-64/*.tar.bz2
     fi
     if [[ $INPUT_PLATFORMS == *"all"* || $INPUT_PLATFORMS == *"linux-32"* ]]; then
-    conda convert -p win-64 linux-64/*.tar.bz2
+    conda convert -p linux-32 linux-64/*.tar.bz2
     fi
     if [[ $INPUT_PLATFORMS == *"all"* || $INPUT_PLATFORMS == *"linux-ppc64"* ]]; then
-    conda convert -p win-64 linux-64/*.tar.bz2
+    conda convert -p linux-ppc64 linux-64/*.tar.bz2
     fi
     if [[ $INPUT_PLATFORMS == *"all"* || $INPUT_PLATFORMS == *"linux-ppc64le"* ]]; then
-    conda convert -p win-64 linux-64/*.tar.bz2
+    conda convert -p linux-ppc64le linux-64/*.tar.bz2
     fi
     if [[ $INPUT_PLATFORMS == *"all"* || $INPUT_PLATFORMS == *"linux-s390x"* ]]; then
-    conda convert -p win-64 linux-64/*.tar.bz2
+    conda convert -p linux-s390x linux-64/*.tar.bz2
     fi
     if [[ $INPUT_PLATFORMS == *"all"* || $INPUT_PLATFORMS == *"linux-armv6l"* ]]; then
-    conda convert -p win-64 linux-64/*.tar.bz2
+    conda convert -p linux-armv6l linux-64/*.tar.bz2
     fi
     if [[ $INPUT_PLATFORMS == *"all"* || $INPUT_PLATFORMS == *"linux-armv7l"* ]]; then
-    conda convert -p win-64 linux-64/*.tar.bz2
+    conda convert -p linux-armv7l linux-64/*.tar.bz2
     fi
     if [[ $INPUT_PLATFORMS == *"all"* || $INPUT_PLATFORMS == *"linux-aarch64"* ]]; then
-    conda convert -p win-64 linux-64/*.tar.bz2
+    conda convert -p linux-aarch64 linux-64/*.tar.bz2
     fi
-    if [[ $INPUT_PLATFORMS == *"all"* || $INPUT_PLATFORMS == *" win-32"* ]]; then
-    conda convert -p win-64 linux-64/*.tar.bz2
+    if [[ $INPUT_PLATFORMS == *"all"* || $INPUT_PLATFORMS == *"win-32"* ]]; then
+    conda convert -p win-32 linux-64/*.tar.bz2
     fi
     if [[ $INPUT_PLATFORMS == *"all"* || $INPUT_PLATFORMS == *"win-64"* ]]; then
     conda convert -p win-64 linux-64/*.tar.bz2
