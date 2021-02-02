@@ -58,40 +58,46 @@ build_package(){
 
 upload_package(){
     export ANACONDA_API_TOKEN=$INPUT_ANACONDATOKEN
-    anaconda upload --label main linux-64/*.tar.bz2
+    ANACONDA_FORCE_UPLOAD=""
+    
+    if [[ "${INPUT_OVERRIDE}" == "true" ]]; then
+    ANACONDA_FORCE_UPLOAD=" --force "
+    fi
+    
+    anaconda upload $ANACONDA_FORCE_UPLOAD --label main linux-64/*.tar.bz2
     
     if [[ $INPUT_PLATFORMS == *"all"* || $INPUT_PLATFORMS == *"osx-64"* ]]; then
-    anaconda upload --label main osx-64/*.tar.bz2
+    anaconda upload $ANACONDA_FORCE_UPLOAD --label main osx-64/*.tar.bz2
     fi
     if [[ $INPUT_PLATFORMS == *"all"* || $INPUT_PLATFORMS == *"osx-arm64"* ]]; then
-    anaconda upload --label main osx-arm64/*.tar.bz2
+    anaconda upload $ANACONDA_FORCE_UPLOAD --label main osx-arm64/*.tar.bz2
     fi
     if [[ $INPUT_PLATFORMS == *"all"* || $INPUT_PLATFORMS == *"linux-32"* ]]; then
-    anaconda upload --label main linux-32/*.tar.bz2
+    anaconda upload $ANACONDA_FORCE_UPLOAD --label main linux-32/*.tar.bz2
     fi
     if [[ $INPUT_PLATFORMS == *"all"* || $INPUT_PLATFORMS == *"linux-ppc64"* ]]; then
-    anaconda upload --label main linux-ppc64/*.tar.bz2
+    anaconda upload $ANACONDA_FORCE_UPLOAD --label main linux-ppc64/*.tar.bz2
     fi
     if [[ $INPUT_PLATFORMS == *"all"* || $INPUT_PLATFORMS == *"linux-ppc64le"* ]]; then
-    anaconda upload --label main linux-ppc64le/*.tar.bz2
+    anaconda upload $ANACONDA_FORCE_UPLOAD --label main linux-ppc64le/*.tar.bz2
     fi
     if [[ $INPUT_PLATFORMS == *"all"* || $INPUT_PLATFORMS == *"linux-s390x"* ]]; then
-    anaconda upload --label main linux-s390x/*.tar.bz2
+    anaconda upload $ANACONDA_FORCE_UPLOAD --label main linux-s390x/*.tar.bz2
     fi
     if [[ $INPUT_PLATFORMS == *"all"* || $INPUT_PLATFORMS == *"linux-armv6l"* ]]; then
-    anaconda upload --label main linux-armv6l/*.tar.bz2
+    anaconda upload $ANACONDA_FORCE_UPLOAD --label main linux-armv6l/*.tar.bz2
     fi
     if [[ $INPUT_PLATFORMS == *"all"* || $INPUT_PLATFORMS == *"linux-armv7l"* ]]; then
-    anaconda upload --label main linux-armv7l/*.tar.bz2
+    anaconda upload $ANACONDA_FORCE_UPLOAD --label main linux-armv7l/*.tar.bz2
     fi
     if [[ $INPUT_PLATFORMS == *"all"* || $INPUT_PLATFORMS == *"linux-aarch64"* ]]; then
-    anaconda upload --label main linux-aarch64/*.tar.bz2
+    anaconda upload $ANACONDA_FORCE_UPLOAD --label main linux-aarch64/*.tar.bz2
     fi
     if [[ $INPUT_PLATFORMS == *"all"* || $INPUT_PLATFORMS == *"win-32"* ]]; then
-    anaconda upload --label main win-32/*.tar.bz2
+    anaconda upload $ANACONDA_FORCE_UPLOAD --label main win-32/*.tar.bz2
     fi
     if [[ $INPUT_PLATFORMS == *"all"* || $INPUT_PLATFORMS == *"win-64"* ]]; then
-    anaconda upload --label main win-64/*.tar.bz2
+    anaconda upload $ANACONDA_FORCE_UPLOAD --label main win-64/*.tar.bz2
     fi
     
 }
