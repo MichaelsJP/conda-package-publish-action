@@ -26,7 +26,20 @@ jobs:
 ```
 - `subDir` defines the directory where the conda configs live.
 - `AnacondaToken` definese the conda API token for password less access.
-- `platforms` define the desired target platforms. All will build... well, all. Possible choices: 'osx-64 osx-arm64 linux-32 linux-ppc64 linux-ppc64le linux-s390x linux-armv6l linux-armv7l linux-aarch64 win-32 win-64'
+- `platforms` defines the desired target platform(s). Chain them together as desired. `all` will build... well, all.   
+**Possible choices**:
+  - all
+  - osx-64
+  - osx-arm64
+  - linux-32
+  - linux-ppc64
+  - linux-ppc64le
+  - linux-s390x
+  - linux-armv6l
+  - linux-armv7l
+  - linux-aarch64
+  - win-32 
+  - win-64
 - `override` is set to false by default. Set to `true` to override existing packages in your conda repository.
 
 ### Example project structure
