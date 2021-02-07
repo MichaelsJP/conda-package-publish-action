@@ -42,7 +42,7 @@ jobs:
   - win-32 
   - win-64
 - `override` is set to false by default. Set to `true` to override existing packages in your conda repository.
-- `dry_run` only builds the packages without publishing them to conda.
+- `dry_run` only build the packages without publishing them to conda.
 
 ### Example project structure
 
