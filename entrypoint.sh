@@ -64,6 +64,11 @@ upload_package(){
     ANACONDA_FORCE_UPLOAD=" --force "
     fi
     
+    if [[ "${INPUT_DRY_RUN}" == "true" ]]; then
+    echo "Dry Run activated. Exiting without publishing to conda."
+    exit 0
+    fi
+    
     anaconda upload $ANACONDA_FORCE_UPLOAD --label main linux-64/*.tar.bz2
     
     if [[ $INPUT_PLATFORMS == *"all"* || $INPUT_PLATFORMS == *"osx-64"* ]]; then
@@ -99,7 +104,7 @@ upload_package(){
     if [[ $INPUT_PLATFORMS == *"all"* || $INPUT_PLATFORMS == *"win-64"* ]]; then
     anaconda upload $ANACONDA_FORCE_UPLOAD --label main win-64/*.tar.bz2
     fi
-    
+
 }
 
 go_to_build_dir
