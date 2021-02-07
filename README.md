@@ -53,7 +53,7 @@ jobs:
 ├── myproject
 │   ├── __init__.py
 │   └── myproject.py
-├── conda
+├── .conda
 │   ├── build.sh
 │   └── meta.yaml
 ├── .github
