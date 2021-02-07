@@ -23,6 +23,7 @@ jobs:
         AnacondaToken: ${{ secrets.ANACONDA_TOKEN }}
         platforms: 'all'
         override: true
+        dry_run: true
 ```
 - `subDir` defines the directory where the conda configs live.
 - `AnacondaToken` definese the conda API token for password less access.
@@ -41,6 +42,7 @@ jobs:
   - win-32 
   - win-64
 - `override` is set to false by default. Set to `true` to override existing packages in your conda repository.
+- `dry_run` only builds the packages without publishing them to conda.
 
 ### Example project structure
 
