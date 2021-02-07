@@ -16,7 +16,7 @@ inputs:
   override:
     description: 'Override existing packages [true/false]'
     default: false
-  dry-run:
+  dry_run:
     description: 'Dry run. Builds the packages without uploading them. [true/false]'
     default: false
 runs:
